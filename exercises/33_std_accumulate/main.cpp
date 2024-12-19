@@ -11,7 +11,10 @@ int main(int argc, char **argv) {
     //       - 形状为 shape；
     //       - 连续存储；
     //       的张量占用的字节数
-    // int size =
+    auto mutiply = [](DataType a, DataType b){
+        return a*b;
+    };
+    int size = std::accumulate(shape, shape+4, 1, mutiply)*4;
     ASSERT(size == 602112, "4x1x3x224x224 = 602112");
     return 0;
 }

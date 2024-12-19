@@ -7,6 +7,7 @@ target("test")
     set_kind("static")
     add_defines(string.format("__XMAKE__=\"%s\"", os.scriptdir():gsub("\\", "/")))
     add_files("learn/test.cpp")
+    add_links("pthread")
 
 target("learn")
     set_kind("binary")
